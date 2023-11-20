@@ -31,9 +31,10 @@ public class MovieModel {
         moviesToBeViewed.addAll(searchResults);
     }
 
-    public void createNewMovie(Movie newMovie) throws Exception {
+    public Movie createNewMovie(Movie newMovie) throws Exception {
         Movie m = movieManager.createNewMovie(newMovie);
         moviesToBeViewed.add(m);
+        return m;
 
         // loading entire file again... not optimal
         //moviesToBeViewed.clear();
